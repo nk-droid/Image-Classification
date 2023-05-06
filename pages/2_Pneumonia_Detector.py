@@ -34,6 +34,6 @@ else:
     st.image(image, use_column_width=True)
     predicted_class = upload_predict(image, model)
     if predicted_class == 1:
-        st.warning("The image shows the presence of pneumonia.")
+        st.warning("The image shows presence of pneumonia.")
     else:
         st.success("The image doesn't show any presence of pneumonia.")
