@@ -17,7 +17,7 @@ st.write("""
          # Pneumonia Detector
          """)
 
-file = st.file_uploader("Upload an X-Ray to detect pneumonia", type=["jpg", "png"])
+file = st.file_uploader("Upload an X-Ray to detect pneumonia", type=["jpg", "jpeg", "png"])
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 def upload_predict(image, model):
@@ -33,7 +33,7 @@ else:
     image = Image.open(file).resize((100,100))
     st.image(image, use_column_width=True)
     predicted_class = upload_predict(image, model)
-    if predicted_class == 0:
+    if predicted_class == 1:
         st.warning("The image shows the presence of pneumonia.")
     else:
         st.success("The image doesn't show any presence of pneumonia.")
