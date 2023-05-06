@@ -7,7 +7,6 @@ from keras.models import load_model
 from PIL import Image
 
 
-@st.cache_resource
 def load_model_():
     model = load_model("./models/butterfly_classification_model")
     with open('assets/butterfly_classes.json', 'r') as f:
