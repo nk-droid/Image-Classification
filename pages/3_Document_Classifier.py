@@ -21,11 +21,11 @@ def preprocess(image):
         Returns X.
     """
     try:
-        im = image.resize((200,200)).convert("RGB")
+        im = image.resize((224,224)).convert("RGB")
     except:
         return "The format of the image isn't suitable."
     X = tf.keras.utils.img_to_array(im)
-    return tf.reshape(X,[X.shape[0]//200,200,200,3])
+    return tf.reshape(X,[X.shape[0]//224,224,224,3])
  
 st.write("""
          # Documents Classifier
